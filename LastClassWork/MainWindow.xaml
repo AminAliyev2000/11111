@@ -1,0 +1,31 @@
+﻿<Window x:Class="LastClassWork.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:local="clr-namespace:LastClassWork"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="Black">
+        <Button Name="butt1" Width="100" Height="50" Content="Hello world" FontSize="14">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard >
+                            <DoubleAnimation 
+                                Storyboard.TargetName="butt1"
+                                Storyboard.TargetProperty="Width"
+                                From="{Binding ElementName=butt1,Path=ActualWidth}"
+                                To="205"
+                                Duration="0:0:5">
+                                
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <!--<Image gif:ImageBehavior.AnimatedSource="DampObviousGraywolf-size_restricted.gif" ></Image>-->
+    </Grid>
+</Window>
